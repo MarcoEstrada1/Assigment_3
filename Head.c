@@ -42,7 +42,6 @@ int main(){
 	}
 	
 	/*Generando la matrz*/
-	
 	matriz_de_resultados=generated_matriz(ncolum+1,tfilas+1);
 	for(i=0; i<ncolum+1;i++){
 		matriz_de_resultados[0][i]=vector_frontera[i];
@@ -52,6 +51,7 @@ int main(){
 		matriz_de_resultados[i][ncolum]=0.0d;
 	}
 	/*Construyendo la matriz de coeficientes*/
+	
 	matriz_de_coeficientes=generated_matriz(ncolum-1,ncolum-1);
 	for(i=0; i<ncolum-1;i++){
 		for(j=0;j<ncolum-1;j++){
@@ -67,6 +67,7 @@ int main(){
 		}
 	}
 	/*Solucion por el metodo explicito*/
+	
 	for(i=1;i<tfilas+1;i++){
 		double *temporal=generated_vector(ncolum-1);
 		for (j=0; j<ncolum-1;j++){
@@ -136,7 +137,7 @@ int main(){
 			matriz_implicita_result[i][q+1]=temporal2[q];
 		}
 		
-	}
+	} 
 	
 	FILE *archivo_explicito;
 	archivo_explicito=fopen("datos_explicito.dat", "w");
@@ -150,6 +151,7 @@ int main(){
 		perror("ERROR. There is not enough memory");
 		exit(EXIT_FAILURE);
 	}
+	
 	char  linea [20000];
 	sprintf(linea, "%d    ", ncolum+1);
 	for(i=0;i<ncolum+1;i++){
@@ -199,7 +201,6 @@ int main(){
 		linea2[len4-1]='\n';
 		fputs(linea2,archivo_implicito);
 	}
-	
 	/*for(i=0;i<tfilas+1;i++){
 		for(j=0;j<ncolum+1;j++){
 			fprintf(archivo_explicito,"%lf   %lf   %lf \n", vector_coordemadas_de_posicion[i], vector_coordemadas_de_posicion[j], matriz_implicita_result[i][j] );
