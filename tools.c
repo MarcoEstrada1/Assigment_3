@@ -64,7 +64,10 @@ double *matriz_vector_multiplicated(double **matriz, double *vector, int dimensi
 
 /*Resolución de un sistema por el método de gauss*/
 
-/*funcion auxiliar*/
+/**************** O B S E R V A C I O N E S  ****************/
+/*   Este tipo de especificacioens es muy genérica
+*/ 
+/*funcion auxiliar*/ 
 double funcion_suma(double **matriz, double*vector, int dimension, int desde, int hasta){
 	 int i;
 	 double acumulador=0.0d;

@@ -4,6 +4,11 @@
 #include <math.h>
 #include <errno.h>
 #include <string.h>
+
+/**************** O B S E R V A C I O N E S  ****************/
+/*   Hay un libreria que te permite definir el valor de pi y
+     si mal no recuerdo es en la misma math.h, revisen porfa
+*/ 
 #define pi   3.14159265358979323846  /*definienddo a pi*/
 #include "tools.h"
 
@@ -11,7 +16,12 @@ int main(){
 	
 	int i,j,p,q;
 	double t,alpha,lamda,tiempof,xinicial,xfinal;
-	/*A continuacion se resolverá por el metodo explicito*/
+	/*A continuacion se resolverá por el metodo explicito*/  /* <--- Este comentario no es concordante
+                                                                     tendría mas sentido decir que se
+                                                                     crean los apuntadores para las
+																	 matrices, o las estructuras de datos
+																	 del programa, o algo así.
+															 */
 	double **matriz_de_coeficientes, **matriz_de_resultados;
 	double *vector_tiempo;
 	double *vector_coordemadas_de_posicion, *vector_del_tiempo;
@@ -138,7 +148,12 @@ int main(){
 		}
 		
 	} 
-	
+	/**************** O B S E R V A C I O N E S  ****************/
+/*   Esta sección del código no esta documentada. Cual es un
+     archivo y cual es el otro archivo. Adicionalente pudieron
+	 realizar las escrituras en los archivos sin el uso de buffering
+*/ 
+
 	FILE *archivo_explicito;
 	archivo_explicito=fopen("datos_explicito.dat", "w");
 	FILE *archivo_implicito;
